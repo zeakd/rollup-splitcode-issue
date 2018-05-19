@@ -1,1 +1,5 @@
-export default () => {}
+import * as sub from './sub'
+
+export {
+  sub
+}

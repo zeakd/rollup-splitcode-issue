@@ -1,21 +1,21 @@
 {
   "version": "0.0.0",
-  "main": "lib/index.cjs.js",
-  "module": "lib/index.esm.js",
   "devDependencies": {
-    "ava": "1.0.0-beta.4",
-    "rollup": "^0.58.2",
-    "rollup-plugin-commonjs": "^9.1.3",
-    "rollup-plugin-node-resolve": "^3.3.0"
+    "del": "^3.0.0",
+    "del-cli": "^1.1.0",
+    "rollup": "^0.58.2"
   },
   "scripts": {
+    "clear": "del es/ lib/",
+    "prebuild": "npm run clear",
+    "predev": "npm run clear",
     "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "test": "ava",
-    "prepublishOnly": "cross-env NODE_ENV=production npm run build"
+    "dev": "rollup -c -w"
   },
   "files": [
-    "lib"
+    "lib",
+    "es"
   ],
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {}
 }
